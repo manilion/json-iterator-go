@@ -4,8 +4,9 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/json-iterator/go"
 	"github.com/stretchr/testify/require"
+
+	"github.com/manilion/json-iterator-go"
 )
 
 func Test_true(t *testing.T) {

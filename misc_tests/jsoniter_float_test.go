@@ -5,7 +5,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/json-iterator/go"
+	"github.com/manilion/json-iterator-go"
 	"github.com/stretchr/testify/require"
 )
 

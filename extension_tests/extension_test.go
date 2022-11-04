@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/json-iterator/go"
+	"github.com/manilion/json-iterator-go"
 	"github.com/modern-go/reflect2"
 	"github.com/stretchr/testify/require"
 	"reflect"
