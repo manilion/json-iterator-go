@@ -1,9 +1,10 @@
 package extra
 
 import (
-	"github.com/manilion/json-iterator-go"
 	"strings"
 	"unicode"
+
+	"github.com/manilion/json-iterator-go"
 )
 
 // SupportPrivateFields include private fields when encoding/decoding
@@ -21,8 +22,6 @@ func (extension *privateFieldsExtension) UpdateStructDescriptor(structDescriptor
 		if isPrivate {
 			tag, hastag := binding.Field.Tag().Lookup("json")
 			if !hastag {
-				binding.FromNames = []string{binding.Field.Name()}
-				binding.ToNames = []string{binding.Field.Name()}
 				continue
 			}
 			tagParts := strings.Split(tag, ",")
@@ -44,11 +43,6 @@ func calcFieldNames(originalFieldName string, tagProvidedFieldName string, whole
 		fieldNames = []string{originalFieldName}
 	} else {
 		fieldNames = []string{tagProvidedFieldName}
-	}
-	// private?
-	isNotExported := unicode.IsLower(rune(originalFieldName[0]))
-	if isNotExported {
-		fieldNames = []string{}
 	}
 	return fieldNames
 }
